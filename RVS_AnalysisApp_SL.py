@@ -152,9 +152,9 @@ def predict_closing_price(data):
     return model.predict([[next_day]])[0].item()
     
 def evaluate_market(data):
-        ma20 = data["Adj Close"].rolling(window=20).mean().iloc[-1].item()
-        ma50 = data["Adj Close"].rolling(window=50).mean().iloc[-1].item()
-        return "Bullish" if ma20 > ma50 else "Bearish"
+    ma20 = data["Adj Close"].rolling(window=20).mean().iloc[-1].item()
+    ma50 = data["Adj Close"].rolling(window=50).mean().iloc[-1].item()
+    return "Bullish" if ma20 > ma50 else "Bearish"
         
 # Set page configuration with the uploaded icon
 st.set_page_config(
@@ -240,14 +240,12 @@ with top_bar:
                     "TCIFINANCE", "TRIDENT", "TTML", "UBL", "UNIONBANK",  
                     "WIPRO", "YESBANK", "ZEEL", "ZOMATO"]  # Replace with your stock list
 
-    # Centered Dropdown for Analysis Mode
-    analysis_mode = st.selectbox("Select Analysis Mode", ["All Stocks", "Choose Stocks"], label_visibility="hidden")  # Hidden label for accessibility
+     # Centered Dropdown for Analysis Mode
+    analysis_mode = st.selectbox("Analysis Mode", ["All Stocks", "Choose Stocks"], index=0)
 
     # Display the selected mode
     if analysis_mode == "Choose Stocks":
-        selected_stocks = st.multiselect("Select Stocks", stocks, label_visibility="hidden")
-    else:
-        selected_stocks = stocks
+        selected_stocks = st.multiselect("Select Stocks", stocks)
 
     # Custom CSS to center the dropdown
     st.markdown(
