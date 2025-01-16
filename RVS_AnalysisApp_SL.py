@@ -14,7 +14,7 @@ def encode_image(image_path):
 # Set the page configuration with a custom favicon
 st.set_page_config(
    page_title="Stock Market Analysis",
-    page_icon="RVSID.png  # Path to your favicon file
+    page_icon="RVSID.png"  # Path to your favicon file
     layout="wide"
 )
 
