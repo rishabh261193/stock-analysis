@@ -245,6 +245,18 @@ with top_bar:
         unsafe_allow_html=True,
     )
 
+    st.markdown(
+        """
+        <style>
+        .stDateInput, .stWrite {
+            margin-top: -10px;  /* Adjust this value as needed */
+            margin-bottom: -5px;  /* Adjust this value as needed */
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
     # First Row: Start Date and End Date
     row1_col1, row1_col2 = st.columns([1, 1])  # Create two columns
     with row1_col1:
