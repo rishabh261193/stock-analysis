@@ -27,7 +27,7 @@ st.markdown(
     }
     .sticky-header {
         position: fixed;
-        top: 15;
+        top: 5;
         left: 0;
         right: 0;
         background-color: lightgreen;
@@ -35,12 +35,14 @@ st.markdown(
         z-index: 1000;
     }
     .sticky-header img {
-        width: 40px; /* Adjust the size of the icon */
+        width: 100px; /* Adjust the size of the icon */
         margin-right: 15px;
+        text-align: center;
     }
     .sticky-header h1 {
         display: inline;
         font-size: 24px;
+        text-align: center;
     }
     </style>
     """,
@@ -55,7 +57,7 @@ st.markdown(
     f"""
     <div class="sticky-header">
         <img src="data:image/png;base64,{image_base64}" alt="Logo">
-        <h1 style="text-align: center; font-size: 18px;">Stock Analysis</h1>
+        <h1>Stock Analysis</h1>
     </div>
     """,
     unsafe_allow_html=True
