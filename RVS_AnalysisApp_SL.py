@@ -33,22 +33,26 @@ st.markdown(
         background-color: lightgreen;
         padding: 10px 0;
         z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .sticky-header img {
-        width: 40px; /* Adjust the size of the icon */
-        margin-right: 15px;
-        text-align: center;
+        width: 40px;  /* Adjust the size of the icon */
+        margin-left: 15px;
+        position: absolute;
+        left: 10px;
     }
     .sticky-header h1 {
-        display: inline;
-        font-size: 24px;
+        margin-left: 60px; /* Give some space between the logo and title */
         text-align: center;
+        font-size: 24px;
+        margin: 0;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
-
 # Convert your image file to base64
 image_base64 = encode_image("RVSID.png")  # Replace with the actual path to your image
 
