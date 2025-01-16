@@ -246,6 +246,8 @@ with top_bar:
     # Display the selected mode
     if analysis_mode == "Choose Stocks":
         selected_stocks = st.multiselect("Select Stocks", stocks)
+    else:
+        selected_stocks = stocks
 
     # Custom CSS to center the dropdown
     st.markdown(
