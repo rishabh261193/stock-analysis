@@ -249,7 +249,7 @@ with top_bar:
         """
         <style>
         .stDateInput, .stWrite {
-            margin-top: -20px;  /* Adjust this value as needed */
+            margin-top: -40px;  /* Adjust this value as needed */
             margin-bottom: -5px;  /* Adjust this value as needed */
         }
         </style>
