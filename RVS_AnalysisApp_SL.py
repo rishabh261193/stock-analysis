@@ -220,25 +220,7 @@ top_bar = st.container()
 with top_bar:
     with open("RVSID.png", "rb") as image_file:
         base64_string = base64.b64encode(image_file.read()).decode()
-    # Apply CSS class to the container
-    st.markdown(
-        f"""
-        <div style="text-align: center;">
-            <img src="data:image/png;base64,{base64_string}" alt="Icon" style="width: 100px;">
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
     
-    # Centered title
-    st.markdown(
-        """
-        <h1 style="text-align: center;">Stock Analysis</h1>
-        """,
-        unsafe_allow_html=True,
-    )
-
     # Centered welcome text
     st.markdown(
         """
