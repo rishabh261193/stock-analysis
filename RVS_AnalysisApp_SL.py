@@ -6,18 +6,6 @@ import yfinance as yf
 from sklearn.linear_model import LinearRegression
 from datetime import date, timedelta
 
-# Function to encode image to base64
-def encode_image(image_path):
-    with open("RVSID.png", "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode()
-
-# Set the page configuration with a custom favicon
-st.set_page_config(
-   page_title="Stock Market Analysis",
-    page_icon="RVSID.png",  # Path to your favicon file
-    layout="wide"
-)
-
 # Custom CSS to change background colors
 st.markdown(
     """
@@ -36,6 +24,18 @@ st.markdown(
     </style>
     """,
     unsafe_allow_html=True
+)
+
+# Function to encode image to base64
+def encode_image(image_path):
+    with open("RVSID.png", "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode()
+
+# Set the page configuration with a custom favicon
+st.set_page_config(
+   page_title="Stock Market Analysis",
+    page_icon="RVSID.png",  # Path to your favicon file
+    layout="wide"
 )
 
 # Add custom CSS for sticky header
