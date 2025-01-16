@@ -27,7 +27,7 @@ st.markdown(
     }
     .sticky-header {
         position: fixed;
-        top: 1vh;
+        top: 0.001;
         left: 0;
         right: 0;
         background-color: lightgreen;
