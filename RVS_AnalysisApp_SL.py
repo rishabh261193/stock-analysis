@@ -212,6 +212,8 @@ def evaluate_market(data):
 # Custom "Top Bar" Layout using Columns
 top_bar = st.container()
 with top_bar:
+    with open("RVSID.png", "rb") as image_file:
+        base64_string = base64.b64encode(image_file.read()).decode()
     # Apply CSS class to the container
     st.markdown(
         f"""
