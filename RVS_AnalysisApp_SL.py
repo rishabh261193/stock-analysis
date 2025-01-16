@@ -35,7 +35,7 @@ st.markdown(
     }
      /* Add padding to the body content to prevent overlap */
     .stApp > div {
-        padding-top: 80px;  /* Adjust this value based on your header height */
+        padding-top: 10px;  /* Adjust this value based on your header height */
         }
     
     .sticky-header img {
