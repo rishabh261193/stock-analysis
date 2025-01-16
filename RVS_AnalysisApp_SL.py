@@ -23,7 +23,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        padding-top: 150px;  /* Add padding to avoid overlapping the header */
+        padding-top: 120px;  /* Add padding to avoid overlapping the header */
     }
     .sticky-header {
         position: fixed;
