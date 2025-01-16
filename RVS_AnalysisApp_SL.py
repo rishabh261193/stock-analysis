@@ -50,7 +50,7 @@ st.markdown(
 )
 
 # Convert your image file to base64
-#image_base64 = encode_image("assets/favicon.png")  # Replace with the actual path to your image
+image_base64 = encode_image("RVSID.png")  # Replace with the actual path to your image
 
 # Create a sticky header with your logo and title
 st.markdown(
