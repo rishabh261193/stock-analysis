@@ -155,7 +155,7 @@ def evaluate_market(data):
 # Set page configuration with the uploaded icon
 st.set_page_config(
     page_title="Stock Market Analysis",
-    page_icon="RVSID.ico",  # Replace with the path if the file is in a subdirectory
+    page_pngn="RVSID.png",  # Replace with the path if the file is in a subdirectory
     layout="wide",
 )
 
