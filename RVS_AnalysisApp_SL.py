@@ -6,6 +6,62 @@ import yfinance as yf
 from sklearn.linear_model import LinearRegression
 from datetime import date, timedelta
 
+# Function to encode image to base64
+def encode_image(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode()
+
+# Set the page configuration with a custom favicon
+st.set_page_config(
+    page_title="Your App Title",  # Title in the browser tab
+    page_icon="assets/favicon.ico",  # Path to your favicon file
+    layout="wide"
+)
+
+# Add custom CSS for sticky header
+st.markdown(
+    """
+    <style>
+    .stApp {
+        padding-top: 120px;  /* Add padding to avoid overlapping the header */
+    }
+    .sticky-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+    .sticky-header img {
+        width: 40px; /* Adjust the size of the icon */
+        margin-right: 15px;
+    }
+    .sticky-header h1 {
+        display: inline;
+        font-size: 24px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Convert your image file to base64
+image_base64 = encode_image("assets/favicon.png")  # Replace with the actual path to your image
+
+# Create a sticky header with your logo and title
+st.markdown(
+    f"""
+    <div class="sticky-header">
+        <img src="data:image/png;base64,{image_base64}" alt="Logo">
+        <h1>Stock Analysis</h1>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
 # Helper Functions
 def fetch_data(ticker, start_date, end_date):
     """Fetch stock data and financial info from Yahoo Finance."""
@@ -152,75 +208,11 @@ def evaluate_market(data):
     ma50 = data["Adj Close"].rolling(window=50).mean().iloc[-1].item()
     return "Bullish" if ma20 > ma50 else "Bearish"
         
-# Set page configuration with the uploaded icon
-st.set_page_config(
-    page_title="Stock Market Analysis",
-    #page_pngn="RVSID.png",  # Replace with the path if the file is in a subdirectory
-    layout="wide",
-)
-
-st.markdown(
-    """
-    <style>
-    .stButton > button {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 
 # Custom "Top Bar" Layout using Columns
 top_bar = st.container()
 with top_bar:
     # Apply CSS class to the container
-    
-    with open("RVSID.png", "rb") as image_file:
-        base64_string = base64.b64encode(image_file.read()).decode()
-    # Add custom CSS for sticky header
-    st.markdown(
-        """
-        <style>
-        .stApp {
-            padding-top: 120px;  /* Add padding to avoid overlapping the header */
-        }
-        .sticky-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: white;
-            padding: 10px;
-            z-index: 1000;
-        }
-        .sticky-header img {
-            width: 40px; /* Adjust the size of the icon */
-            margin-right: 15px;
-        }
-        .sticky-header h1 {
-            display: inline;
-            font-size: 24px;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-    
-    # Create a sticky header with your logo and title
-    st.markdown(
-        """
-        <div class="sticky-header">
-            <img src="data:image/png;base64, {base64_string}" alt="Logo" style="width: 40px;">
-            <h1>Stock Analysis</h1>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-    
     st.markdown(
         f"""
         <div style="text-align: center;">
