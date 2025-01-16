@@ -24,35 +24,28 @@ st.markdown(
     <style>
     .sticky-header {
         position: fixed;
-        top: 8vh;
+        top: 0;  /* Ensure header starts at the top */
         left: 0;
         right: 0;
         background-color: lightgreen;
         z-index: 1000;
         display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-     /* Add padding to the body content to prevent overlap */
-    .stApp > div {
-        padding-top: 10px;  /* Adjust this value based on your header height */
-        }
-    
-    /* Create a flex container to center the content */
-    .sticky-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;  /* Center the icon and title horizontally */
+        flex-direction: column;  /* Stack logo and header vertically */
+        align-items: center;  /* Center the logo and title horizontally */
         justify-content: center;  /* Center them vertically */
         text-align: center;
-        position: relative;
+        padding: 10px 0;  /* Padding to provide space for header content */
+    }
+
+    /* Add padding to the body content to prevent overlap */
+    .stApp > div {
+        padding-top: 120px;  /* Adjust this value based on your header height */
     }
     
     /* Styling for the icon */
     .sticky-header img {
         width: 50px;  /* Adjust the size of the icon */
         margin-bottom: 10px;  /* Space between the icon and header */
-        position: relative;
     }
     
     /* Styling for the header */
@@ -65,6 +58,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 # Convert your image file to base64
 image_base64 = encode_image("RVSID.png")  # Replace with the actual path to your image
 
@@ -78,6 +72,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 # Helper Functions
 def fetch_data(ticker, start_date, end_date):
