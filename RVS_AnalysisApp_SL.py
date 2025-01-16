@@ -38,7 +38,7 @@ st.markdown(
         align-items: center;
     }
     .sticky-header img {
-        width: 100px;  /* Adjust the size of the icon */
+        width: 40px;  /* Adjust the size of the icon */
         margin-left: 15px;
         position: absolute;
         left: 10px;
@@ -46,7 +46,7 @@ st.markdown(
     .sticky-header h1 {
         margin-left: 60px; /* Give some space between the logo and title */
         text-align: center;
-        font-size: 48px;
+        font-size: 40px;
         margin: 0;
     }
     </style>
