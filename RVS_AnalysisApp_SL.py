@@ -159,46 +159,6 @@ st.set_page_config(
     layout="wide",
 )
 
-# Add custom CSS for sticky header
-st.markdown(
-    """
-    <style>
-    .stApp {
-        padding-top: 120px;  /* Add padding to avoid overlapping the header */
-    }
-    .sticky-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: white;
-        padding: 10px 0;
-        z-index: 1000;
-    }
-    .sticky-header img {
-        width: 40px; /* Adjust the size of the icon */
-        margin-right: 15px;
-    }
-    .sticky-header h1 {
-        display: inline;
-        font-size: 24px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-# Create a sticky header with your logo and title
-st.markdown(
-    """
-    <div class="sticky-header">
-        <img src="data:image/png;base64, YOUR_BASE64_ENCODED_IMAGE" alt="Logo">
-        <h1>Stock Analysis</h1>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
 st.markdown(
     """
     <style>
@@ -220,7 +180,47 @@ with top_bar:
     
     with open("RVSID.png", "rb") as image_file:
         base64_string = base64.b64encode(image_file.read()).decode()
+    # Add custom CSS for sticky header
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            padding-top: 120px;  /* Add padding to avoid overlapping the header */
+        }
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        .sticky-header img {
+            width: 40px; /* Adjust the size of the icon */
+            margin-right: 15px;
+        }
+        .sticky-header h1 {
+            display: inline;
+            font-size: 24px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    # Create a sticky header with your logo and title
+    st.markdown(
+        """
+        <div class="sticky-header">
+            <img src="data:image/png;base64, YOUR_BASE64_ENCODED_IMAGE" alt="Logo">
+            <h1>Stock Analysis</h1>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
+    
     st.markdown(
         f"""
         <div style="text-align: center;">
