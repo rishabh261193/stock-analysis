@@ -39,13 +39,13 @@ st.markdown(
         }
     
     .sticky-header img {
-        width: 60px;  /* Adjust the size of the icon */
+        width: 30px;  /* Adjust the size of the icon */
         margin-left: 1px;
         position: absolute;
         left: 10px;
     }
     .sticky-header h1 {
-        margin-left: 40px; /* Give some space between the logo and title */
+        margin-left: 80px; /* Give some space between the logo and title */
         text-align: center;
         font-size: 40px;
         margin: 0;
