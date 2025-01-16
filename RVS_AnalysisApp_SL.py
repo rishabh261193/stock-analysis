@@ -22,9 +22,6 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    .stApp {
-        padding-top: 1px;  /* Add padding to avoid overlapping the header */
-    }
     .sticky-header {
         position: fixed;
         top: 8vh;
@@ -36,6 +33,11 @@ st.markdown(
         justify-content: center;
         align-items: center;
     }
+     /* Add padding to the body content to prevent overlap */
+    .stApp > div {
+        padding-top: 80px;  /* Adjust this value based on your header height */
+        }
+    
     .sticky-header img {
         width: 60px;  /* Adjust the size of the icon */
         margin-left: 15px;
@@ -214,6 +216,18 @@ def evaluate_market(data):
     ma50 = data["Adj Close"].rolling(window=50).mean().iloc[-1].item()
     return "Bullish" if ma20 > ma50 else "Bearish"
         
+st.markdown(
+    """
+    <style>
+    .stButton > button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Custom "Top Bar" Layout using Columns
 top_bar = st.container()
