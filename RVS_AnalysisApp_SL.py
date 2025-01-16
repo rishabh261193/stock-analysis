@@ -50,6 +50,32 @@ st.markdown(
         font-size: 40px;
         margin: 0;
         color: darkblue;
+
+    /* Mobile responsive styles */
+    @media only screen and (max-width: 768px) {
+        /* Adjust the icon size and spacing for smaller screens */
+        .sticky-header img {
+            width: 30px;  /* Smaller icon for mobile */
+            left: 5px;    /* Adjust left position */
+        }
+    
+        .sticky-header h1 {
+            margin-left: 45px; /* Adjust space between the logo and title */
+            font-size: 18px;   /* Smaller title font size */
+        }
+    }
+    
+    /* Very small screens (e.g., phones in portrait mode) */
+    @media only screen and (max-width: 480px) {
+        .sticky-header img {
+            width: 25px;  /* Even smaller icon */
+            left: 5px;    /* Adjust position for smaller screens */
+        }
+    
+        .sticky-header h1 {
+            margin-left: 40px;  /* Less space between the icon and title */
+            font-size: 16px;    /* Smaller title font size */
+        }
     }
     </style>
     """,
