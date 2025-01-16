@@ -217,10 +217,10 @@ with top_bar:
     row1_col1, row1_col2 = st.columns([1, 1])  # Create two columns
     with row1_col1:
         st.write("### Start Date")
-        start_date = st.date_input("", value=date.today() - timedelta(days=150), label_visibility="collapsed")
+        start_date = st.date_input("", value=date.today() - timedelta(days=150), label_visibility="hidden")  # Hidden label for accessibility
     with row1_col2:
         st.write("### End Date")
-        end_date = st.date_input("", value=date.today(), label_visibility="collapsed")
+        end_date = st.date_input("", value=date.today(), label_visibility="hidden")  # Hidden label for accessibility
         
     
     st.write("### Analysis Mode")
@@ -241,11 +241,11 @@ with top_bar:
                     "WIPRO", "YESBANK", "ZEEL", "ZOMATO"]  # Replace with your stock list
 
     # Centered Dropdown for Analysis Mode
-    analysis_mode = st.selectbox("", ["All Stocks", "Choose Stocks"])
+    analysis_mode = st.selectbox("", ["All Stocks", "Choose Stocks"], label_visibility="hidden")  # Hidden label for accessibility
 
     # Display the selected mode
     if analysis_mode == "Choose Stocks":
-        selected_stocks = st.multiselect("Select Stocks", stocks)
+        selected_stocks = st.multiselect("Select Stocks", stocks, label_visibility="hidden")
     else:
         selected_stocks = stocks
 
