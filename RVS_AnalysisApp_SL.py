@@ -112,16 +112,12 @@ def decide_buy_sell(financial_ratios):
             buy_signals += 1
         elif "P/E Ratio" in financial_ratios and financial_ratios["P/E Ratio"] and financial_ratios["P/E Ratio"] > 25:
             sell_signals += 1
-
         if "PEG Ratio" in financial_ratios and financial_ratios["PEG Ratio"] and financial_ratios["PEG Ratio"] < 1:
             buy_signals += 1
-
         if "ROE" in financial_ratios and financial_ratios["ROE"] and financial_ratios["ROE"] > 15:
             buy_signals += 1
-
         if "Debt/Equity Ratio" in financial_ratios and financial_ratios["Debt/Equity Ratio"] and financial_ratios["Debt/Equity Ratio"] > 50:
             sell_signals += 1
-
         if "Quick Ratio" in financial_ratios and financial_ratios["Quick Ratio"] and financial_ratios["Quick Ratio"] < 1:
             sell_signals += 1
 
@@ -138,7 +134,7 @@ def decide_buy_sell(financial_ratios):
             return "Hold"
     except KeyError as e:
         return f"Missing key in financial_ratios: {e}"
-        
+      
     print(financial_ratios)
 
 def predict_closing_price(data):
@@ -159,7 +155,7 @@ def evaluate_market(data):
 # Set page configuration with the uploaded icon
 st.set_page_config(
     page_title="Stock Market Analysis",
-    page_icon="RVSID.svg",  # Replace with the path if the file is in a subdirectory
+    page_icon="RVSID.ico",  # Replace with the path if the file is in a subdirectory
     layout="wide",
 )
 
