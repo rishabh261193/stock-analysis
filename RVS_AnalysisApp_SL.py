@@ -245,7 +245,7 @@ with top_bar:
 
     # Display the selected mode
     if analysis_mode == "Choose Stocks":
-        selected_stocks = st.multiselect("Select Stocks", stocks, index=0)
+        selected_stocks = st.multiselect("Select Stocks", stocks)
     else:
         selected_stocks = stocks
 
