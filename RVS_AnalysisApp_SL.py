@@ -6,26 +6,6 @@ import yfinance as yf
 from sklearn.linear_model import LinearRegression
 from datetime import date, timedelta
 
-# Custom CSS to change background colors
-st.markdown(
-    """
-    <style>
-    /* Change background color of the entire page to light green */
-    body {
-        background-color: #e0f7e0;  /* Light green color */
-    }
-    
-    /* Change background color of the result container to white */
-    .stContainer {
-        background-color: white;  /* White color for the result container */
-    }
-    
-    /* You can also style other elements here */
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 # Function to encode image to base64
 def encode_image(image_path):
     with open("RVSID.png", "rb") as image_file:
