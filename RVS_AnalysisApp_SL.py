@@ -193,7 +193,7 @@ with top_bar:
             left: 0;
             right: 0;
             background-color: white;
-            padding: 10px 0;
+            padding: 10px;
             z-index: 1000;
         }
         .sticky-header img {
@@ -213,7 +213,7 @@ with top_bar:
     st.markdown(
         """
         <div class="sticky-header">
-            <img src="data:image/png;base64, YOUR_BASE64_ENCODED_IMAGE" alt="Logo">
+            <img src="data:image/png;base64, {base64_string}" alt="Logo" style="width: 40px;">
             <h1>Stock Analysis</h1>
         </div>
         """,
