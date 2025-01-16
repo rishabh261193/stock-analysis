@@ -241,7 +241,7 @@ with top_bar:
                     "WIPRO", "YESBANK", "ZEEL", "ZOMATO"]  # Replace with your stock list
 
     # Centered Dropdown for Analysis Mode
-    analysis_mode = st.selectbox("", ["All Stocks", "Choose Stocks"], label_visibility="hidden")  # Hidden label for accessibility
+    analysis_mode = st.selectbox("Select Analysis Mode", ["All Stocks", "Choose Stocks"], label_visibility="hidden")  # Hidden label for accessibility
 
     # Display the selected mode
     if analysis_mode == "Choose Stocks":
