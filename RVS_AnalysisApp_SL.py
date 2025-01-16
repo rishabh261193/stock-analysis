@@ -31,7 +31,6 @@ st.markdown(
         left: 0;
         right: 0;
         background-color: lightgreen;
-        padding: 1px 0;
         z-index: 1000;
         display: flex;
         justify-content: center;
