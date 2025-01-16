@@ -30,7 +30,7 @@ st.markdown(
         top: 0;
         left: 0;
         right: 0;
-        background-color: white;
+        background-color: lightgreen;
         padding: 10px 0;
         z-index: 1000;
     }
@@ -55,7 +55,7 @@ st.markdown(
     f"""
     <div class="sticky-header">
         <img src="data:image/png;base64,{image_base64}" alt="Logo">
-        <h1>Stock Analysis</h1>
+        <h1 style="text-align: center; font-size: 18px;">Stock Analysis</h1>
     </div>
     """,
     unsafe_allow_html=True
