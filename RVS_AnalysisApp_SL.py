@@ -38,18 +38,28 @@ st.markdown(
         padding-top: 10px;  /* Adjust this value based on your header height */
         }
     
-    .sticky-header img {
-        width: 30px;  /* Adjust the size of the icon */
-        margin-left: 1px;
-        position: absolute;
-        left: 10px;
-    }
-    .sticky-header h1 {
-        margin-left: 80px; /* Give some space between the logo and title */
+    /* Create a flex container to center the content */
+    .sticky-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;  /* Center the icon and title horizontally */
+        justify-content: center;  /* Center them vertically */
         text-align: center;
-        font-size: 40px;
+        position: relative;
+    }
+    
+    /* Styling for the icon */
+    .sticky-header img {
+        width: 50px;  /* Adjust the size of the icon */
+        margin-bottom: 10px;  /* Space between the icon and header */
+        position: relative;
+    }
+    
+    /* Styling for the header */
+    .sticky-header h1 {
+        font-size: 40px;  /* Larger font size for the title */
+        color: darkblue;  /* Set header color */
         margin: 0;
-        color: darkblue;
     }
     </style>
     """,
