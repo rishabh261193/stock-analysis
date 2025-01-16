@@ -8,13 +8,13 @@ from datetime import date, timedelta
 
 # Function to encode image to base64
 def encode_image(image_path):
-    with open(image_path, "rb") as image_file:
+    with open("RVSID.png", "rb") as image_file:
         return base64.b64encode(image_file.read()).decode()
 
 # Set the page configuration with a custom favicon
 st.set_page_config(
-    page_title="Your App Title",  # Title in the browser tab
-    page_icon="assets/favicon.ico",  # Path to your favicon file
+   page_title="Stock Market Analysis",
+    page_icon="RVSID.png  # Path to your favicon file
     layout="wide"
 )
 
