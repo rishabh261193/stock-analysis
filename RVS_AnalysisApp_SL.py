@@ -18,6 +18,26 @@ st.set_page_config(
     layout="wide"
 )
 
+# Custom CSS to change background colors
+st.markdown(
+    """
+    <style>
+    /* Change background color of the entire page to light green */
+    body {
+        background-color: #e0f7e0;  /* Light green color */
+    }
+    
+    /* Change background color of the result container to white */
+    .stContainer {
+        background-color: white;  /* White color for the result container */
+    }
+    
+    /* You can also style other elements here */
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Add custom CSS for sticky header
 st.markdown(
     """
@@ -68,27 +88,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-# Custom CSS to change background colors
-st.markdown(
-    """
-    <style>
-    /* Change background color of the entire page to light green */
-    body {
-        background-color: #e0f7e0;  /* Light green color */
-    }
-    
-    /* Change background color of the result container to white */
-    .stContainer {
-        background-color: white;  /* White color for the result container */
-    }
-    
-    /* You can also style other elements here */
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 
 # Helper Functions
 def fetch_data(ticker, start_date, end_date):
