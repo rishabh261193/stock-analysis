@@ -23,7 +23,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        padding-top: 10px;  /* Add padding to avoid overlapping the header */
+        padding-top: 1px;  /* Add padding to avoid overlapping the header */
     }
     .sticky-header {
         position: fixed;
@@ -37,7 +37,7 @@ st.markdown(
         align-items: center;
     }
     .sticky-header img {
-        width: 40px;  /* Adjust the size of the icon */
+        width: 60px;  /* Adjust the size of the icon */
         margin-left: 15px;
         position: absolute;
         left: 10px;
