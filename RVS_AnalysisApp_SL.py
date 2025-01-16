@@ -27,7 +27,7 @@ st.markdown(
     }
     .sticky-header {
         position: fixed;
-        top: 5;
+        top: 1;
         left: 0;
         right: 0;
         background-color: lightgreen;
@@ -35,7 +35,7 @@ st.markdown(
         z-index: 1000;
     }
     .sticky-header img {
-        width: 100px; /* Adjust the size of the icon */
+        width: 40px; /* Adjust the size of the icon */
         margin-right: 15px;
         text-align: center;
     }
