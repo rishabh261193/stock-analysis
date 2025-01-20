@@ -31,7 +31,7 @@ if image_base64:  # Proceed only if image encoding was successful
         <style>
         .sticky-header {
             position: fixed;
-            top: calc(5vh);  /* Ensure header starts at the top */
+            top: calc(8vh);  /* Ensure header starts at the top */
             left: 0;
             right: 0;
             background-color: lightgreen;
@@ -41,7 +41,7 @@ if image_base64:  # Proceed only if image encoding was successful
             align-items: center;  /* Center the logo and title horizontally */
             justify-content: center;  /* Center them vertically */
             text-align: center;
-            padding: 10px 0;  /* Padding to provide space for header content */
+            padding: 1px 0;  /* Padding to provide space for header content */
         }
         .sticky-header img {
             width: 80px;
