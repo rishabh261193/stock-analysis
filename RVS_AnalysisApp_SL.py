@@ -25,51 +25,51 @@ if image_base64:  # Proceed only if image encoding was successful
         layout="wide"
     )
 
-# Add custom CSS for sticky header
-st.markdown(
-    """
-    <style>
-    .sticky-header {
-        position: fixed;
-        top: 0;  /* Ensure header starts at the top */
-        left: 0;
-        right: 0;
-        background-color: lightgreen;
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;  /* Stack logo and header vertically */
-        align-items: center;  /* Center the logo and title horizontally */
-        justify-content: center;  /* Center them vertically */
-        text-align: center;
-        padding: 10px 0;  /* Padding to provide space for header content */
-    }
-    .sticky-header img {
-        width: 50px;
-        margin-bottom: 10px;
-    }
-    .sticky-header h1 {
-        font-size: 40px;
-        color: darkblue;
-        margin: 0;
-    }
-    .stApp > div {
-        padding-top: 120px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
+    # Add custom CSS for sticky header
+    st.markdown(
+        """
+        <style>
+        .sticky-header {
+            position: fixed;
+            top: 0;  /* Ensure header starts at the top */
+            left: 0;
+            right: 0;
+            background-color: lightgreen;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;  /* Stack logo and header vertically */
+            align-items: center;  /* Center the logo and title horizontally */
+            justify-content: center;  /* Center them vertically */
+            text-align: center;
+            padding: 10px 0;  /* Padding to provide space for header content */
+        }
+        .sticky-header img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+        .sticky-header h1 {
+            font-size: 40px;
+            color: darkblue;
+            margin: 0;
+        }
+        .stApp > div {
+            padding-top: 120px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+        )
+    
+    # Create a sticky header with your logo and title
+    st.markdown(
+        f"""
+        <div class="sticky-header">
+            <img src="data:image/png;base64,{image_base64}" alt="Logo">
+            <h1>Stock Analysis</h1>
+        </div>
+        """,
+        unsafe_allow_html=True
     )
-
-# Create a sticky header with your logo and title
-st.markdown(
-    f"""
-    <div class="sticky-header">
-        <img src="data:image/png;base64,{image_base64}" alt="Logo">
-        <h1>Stock Analysis</h1>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
 else:
     st.error("Unable to load header icon. Please check the image path.")
 
