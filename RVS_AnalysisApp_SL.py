@@ -45,7 +45,7 @@ if image_base64:  # Proceed only if image encoding was successful
             padding: 2vh 0;
         }
         .sticky-header img {
-            height: 8vh;
+            height: 12vh;
             margin-bottom: 1vh;
         }
         .sticky-header h1 {
@@ -61,13 +61,13 @@ if image_base64:  # Proceed only if image encoding was successful
                 padding: 1.5vh 0;
             }
             .sticky-header img {
-                height: 6vh;
+                height: 10vh;
             }
             .sticky-header h1 {
                 font-size: 4vh;
             }
             .stApp > div {
-                padding-top: 10vh;
+                padding-top: 20vh;
             }
         }
         @media (max-width: 480px) {
@@ -76,14 +76,14 @@ if image_base64:  # Proceed only if image encoding was successful
                 padding: 1vh 0;
             }
             .sticky-header img {
-                height: 5vh;
+                height: 10vh;
                 margin: 0 1vh 0 0;
             }
             .sticky-header h1 {
                 font-size: 3.5vh;
             }
             .stApp > div {
-                padding-top: 8vh;
+                padding-top: 18vh;
             }
         }
         </style>
