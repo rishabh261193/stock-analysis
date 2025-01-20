@@ -45,7 +45,7 @@ if image_base64:  # Proceed only if image encoding was successful
         }
         .sticky-header img {
             width: 80px;
-            margin-bottom: 1px;
+            margin-bottom: 0;
         }
         .sticky-header h1 {
             font-size: 40px;
