@@ -58,6 +58,7 @@ if image_base64:  # Proceed only if image encoding was successful
         }
         @media (max-width: 768px) {
             .sticky-header {
+                top: 8vh;
                 padding: 1.5vh 0;
             }
             .sticky-header img {
@@ -72,6 +73,7 @@ if image_base64:  # Proceed only if image encoding was successful
         }
         @media (max-width: 480px) {
             .sticky-header {
+                top: 8vh;
                 flex-direction: row;
                 padding: 1vh 0;
             }
@@ -83,7 +85,7 @@ if image_base64:  # Proceed only if image encoding was successful
                 font-size: 3.5vh;
             }
             .stApp > div {
-                padding-top: 18vh;
+                padding-top: 20vh;
             }
         }
         </style>
