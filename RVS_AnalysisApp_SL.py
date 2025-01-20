@@ -68,7 +68,7 @@ if image_base64:  # Proceed only if image encoding was successful
                 font-size: 4vh;
             }
             .stApp > div {
-                padding-top: 20vh;
+                padding-top: 24vh;
             }
         }
         @media (max-width: 480px) {
@@ -85,7 +85,7 @@ if image_base64:  # Proceed only if image encoding was successful
                 font-size: 3.5vh;
             }
             .stApp > div {
-                padding-top: 20vh;
+                padding-top: 24vh;
             }
         }
         </style>
