@@ -31,7 +31,7 @@ if image_base64:  # Proceed only if image encoding was successful
         <style>
         .sticky-header {
             position: fixed;
-            top: 2;  /* Ensure header starts at the top */
+            top: 1;  /* Ensure header starts at the top */
             left: 0;
             right: 0;
             background-color: lightgreen;
