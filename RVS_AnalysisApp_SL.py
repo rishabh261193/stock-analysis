@@ -29,36 +29,67 @@ if image_base64:  # Proceed only if image encoding was successful
     st.markdown(
         """
         <style>
+        /* Dynamic header using vh */
         .sticky-header {
             position: fixed;
-            top: calc(10vh);  /* Ensure header starts at the top */
+            top: 1vh;
             left: 0;
             right: 0;
             background-color: lightgreen;
             z-index: 1000;
             display: flex;
-            flex-direction: column;  /* Stack logo and header vertically */
-            align-items: center;  /* Center the logo and title horizontally */
-            justify-content: center;  /* Center them vertically */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 1px 0;  /* Padding to provide space for header content */
+            padding: 2vh 0;
         }
         .sticky-header img {
-            width: 80px;
-            margin-bottom: 0;
+            height: 8vh;
+            margin-bottom: 1vh;
         }
         .sticky-header h1 {
-            font-size: 40px;
+            font-size: 5vh;
             color: darkblue;
             margin: 0;
         }
         .stApp > div {
-            padding-top: 120px;
+            padding-top: 12vh;
+        }
+        @media (max-width: 768px) {
+            .sticky-header {
+                padding: 1.5vh 0;
+            }
+            .sticky-header img {
+                height: 6vh;
+            }
+            .sticky-header h1 {
+                font-size: 4vh;
+            }
+            .stApp > div {
+                padding-top: 10vh;
+            }
+        }
+        @media (max-width: 480px) {
+            .sticky-header {
+                flex-direction: row;
+                padding: 1vh 0;
+            }
+            .sticky-header img {
+                height: 5vh;
+                margin: 0 1vh 0 0;
+            }
+            .sticky-header h1 {
+                font-size: 3.5vh;
+            }
+            .stApp > div {
+                padding-top: 8vh;
+            }
         }
         </style>
         """,
         unsafe_allow_html=True
-        )
+    )
     
     # Create a sticky header with your logo and title
     st.markdown(
