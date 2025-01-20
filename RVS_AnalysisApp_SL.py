@@ -54,7 +54,7 @@ if image_base64:  # Proceed only if image encoding was successful
             margin: 0;
         }
         .stApp > div {
-            padding-top: 12vh;
+            padding-top: 24vh;
         }
         @media (max-width: 768px) {
             .sticky-header {
