@@ -8,15 +8,22 @@ from datetime import date, timedelta
 
 # Function to encode image to base64
 def encode_image(image_path):
-    with open("RVSID.png", "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode()
-
+    try:
+        with open(image_path, "rb") as image_file:
+            return base64.b64encode(image_file.read()).decode()
+    except FileNotFoundError:
+        st.error(f"Image file '{image_path}' not found. Please check the path.")
+        return None
 # Set the page configuration with a custom favicon
-st.set_page_config(
-   page_title="Stock Market Analysis",
-    page_icon="RVSID.png",  # Path to your favicon file
-    layout="wide"
-)
+image_path = "RVSID.png"  # Replace with the correct path to your image
+image_base64 = encode_image(image_path)
+
+if image_base64:  # Proceed only if image encoding was successful
+    st.set_page_config(
+        page_title="Stock Market Analysis",
+        page_icon=f"data:image/png;base64,{image_base64}",  # Use encoded image for the favicon
+        layout="wide"
+    )
 
 # Add custom CSS for sticky header
 st.markdown(
@@ -36,31 +43,22 @@ st.markdown(
         text-align: center;
         padding: 10px 0;  /* Padding to provide space for header content */
     }
-
-    /* Add padding to the body content to prevent overlap */
-    .stApp > div {
-        padding-top: 120px;  /* Adjust this value based on your header height */
-    }
-    
-    /* Styling for the icon */
     .sticky-header img {
-        width: 50px;  /* Adjust the size of the icon */
-        margin-bottom: 10px;  /* Space between the icon and header */
+        width: 50px;
+        margin-bottom: 10px;
     }
-    
-    /* Styling for the header */
     .sticky-header h1 {
-        font-size: 40px;  /* Larger font size for the title */
-        color: darkblue;  /* Set header color */
+        font-size: 40px;
+        color: darkblue;
         margin: 0;
+    }
+    .stApp > div {
+        padding-top: 120px;
     }
     </style>
     """,
     unsafe_allow_html=True
-)
-
-# Convert your image file to base64
-image_base64 = encode_image("RVSID.png")  # Replace with the actual path to your image
+    )
 
 # Create a sticky header with your logo and title
 st.markdown(
@@ -72,6 +70,9 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+else:
+    st.error("Unable to load header icon. Please check the image path.")
+
 
 
 # Helper Functions
