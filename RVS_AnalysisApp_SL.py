@@ -32,7 +32,7 @@ if image_base64:  # Proceed only if image encoding was successful
         /* Dynamic header using vh */
         .sticky-header {
             position: fixed;
-            top: 1vh;
+            top: 10vh;
             left: 0;
             right: 0;
             background-color: lightgreen;
