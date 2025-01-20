@@ -31,7 +31,7 @@ if image_base64:  # Proceed only if image encoding was successful
         <style>
         .sticky-header {
             position: fixed;
-            top: 5;  /* Ensure header starts at the top */
+            top: 2;  /* Ensure header starts at the top */
             left: 0;
             right: 0;
             background-color: lightgreen;
@@ -44,8 +44,8 @@ if image_base64:  # Proceed only if image encoding was successful
             padding: 10px 0;  /* Padding to provide space for header content */
         }
         .sticky-header img {
-            width: 50px;
-            margin-bottom: 10px;
+            width: 80px;
+            margin-bottom: 1px;
         }
         .sticky-header h1 {
             font-size: 40px;
