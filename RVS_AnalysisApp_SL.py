@@ -408,29 +408,22 @@ if st.button("Analyze Stocks"):
         key=lambda x: decision_order.get(x[5], 6)  # x[5] corresponds to the 'decision'
     )
     
-    # Display the sorted results in rows of 3 columns
+    # Display the sorted results
     for i in range(0, len(all_stocks_sorted), columns_per_row):
-        row = st.columns(columns_per_row)  # Create 3 columns for each row
+        row = st.columns(columns_per_row)
     
-        # Loop through the current row's stock data and display it
         for j, (stock, last_close, predicted_price, breakout_data, formatted_ratios, decision, trend, box_color) in enumerate(all_stocks_sorted[i:i+columns_per_row]):
             with row[j]:
-                # Assuming breakout_data is a dictionary
-                breakout_list = "".join([f"<li style='font-size: 16px; line-height: 1;'><strong>{key}:</strong> {value}</li>" for key, value in breakout_data.items()])
-    
-                # Create a bullet list for Financial Ratios with reduced line spacing
-                financial_ratios_list = "".join([f"<li style='font-size: 16px; line-height: 1;'><strong>{key}:</strong> {value}</li>" for key, value in formatted_ratios.items()])
-    
-                # Display the stock data with reduced line spacing
+                breakout_list = "".join([f"<li><strong>{key}:</strong> {value}</li>" for key, value in breakout_data.items()])
+                financial_ratios_list = "".join([f"<li><strong>{key}:</strong> {value}</li>" for key, value in formatted_ratios.items()])
                 st.markdown(f"""
-                    <div style="border: 2px solid {box_color}; padding: 15px; background-color: {box_color}; color: white; border-radius: 10px; margin-bottom: 20px; font-size: 18px; line-height: 1.2;">
-                        <h3 style="font-size: 24px; text-align: center; line-height: 1.2;">{stock}</h3>
-                        <p style="font-size: 18px; line-height: 0.5;"><strong>Last Close:</strong> ₹{last_close:.2f}</p>
-                        <p style="font-size: 18px; line-height: 0.5;"><strong>Predicted Price:</strong> ₹{predicted_price:.2f}</p>
-                        <p style="font-size: 18px; line-height: 0.1;"><strong>Breakout Indicators:</strong><br><ul>{breakout_list}</ul></p>
-                        <p style="font-size: 18px; line-height: 0.1;"><strong>Financial Ratios:</strong><br><ul>{financial_ratios_list}</ul></p>
-                        <p style="font-size: 18px; line-height: 0.5;"><strong>Decision:</strong> {decision}</p>
-                        <p style="font-size: 18px; line-height: 0.5;"><strong>Market Trend:</strong> {trend}</p>
+                    <div style="border: 2px solid {box_color}; padding: 15px; background-color: {box_color}; color: white; border-radius: 10px; margin-bottom: 20px;">
+                        <h3>{stock}</h3>
+                        <p><strong>Last Close:</strong> ₹{last_close:.2f}</p>
+                        <p><strong>Predicted Price:</strong> ₹{predicted_price:.2f}</p>
+                        <p><strong>Breakout Indicators:</strong><br><ul>{breakout_list}</ul></p>
+                        <p><strong>Financial Ratios:</strong><br><ul>{financial_ratios_list}</ul></p>
+                        <p><strong>Decision:</strong> {decision}</p>
+                        <p><strong>Market Trend:</strong> {trend}</p>
                     </div>
                 """, unsafe_allow_html=True)
-    
