@@ -377,9 +377,9 @@ if st.button("Analyze Stocks"):
             
             # Determine the background color based on the decision
             color_map = {
-                "Strong Buy": "darkgreen",
+                "Strong Buy": "green",
                 "Strong Sell": "darkred",
-                "Buy": "green",
+                "Buy": "lightgreen",
                 "Sell": "lightcoral",
                 "Hold": "orange"
             }
